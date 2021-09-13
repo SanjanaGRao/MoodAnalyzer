@@ -9,7 +9,8 @@ public class MoodAnalysisException extends Exception
 {
 	/*
 	 * An enumeration is created which has constant values when the message entered is empty and null
-	 * 
+	 * @NULL_MESSAGE is if the user enters null
+	 * @EMPTY_MESSAGE is when the user gives an empty message
 	 */
 	public enum ExceptionType 
 	{
