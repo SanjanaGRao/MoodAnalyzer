@@ -36,5 +36,14 @@ public class MoodAnalyzerTestCases
 	    	MoodAnalyzer  moodAnalyzer = new MoodAnalyzer("I'm feeling okay.");
 	    	String mood = moodAnalyzer.analyseMood();
 	    	Assert.assertEquals(mood, "HAPPY");
-		}	 
+		}
+	    
+	  //Test Case 4 -when mood entered is Null, displays happy.
+	    @Test
+	    public void WhenMoodIsNullDisplaysHAPPY() 
+	    {
+	    	MoodAnalyzer  moodAnalyzer = new MoodAnalyzer(null);
+	    	String mood = moodAnalyzer.analyseMood();
+	    	Assert.assertEquals(mood, "HAPPY");
+		}	 	    
 }

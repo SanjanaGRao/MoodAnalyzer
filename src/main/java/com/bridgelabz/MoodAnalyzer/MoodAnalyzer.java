@@ -18,11 +18,18 @@ public class MoodAnalyzer
 	// This method returns SAD or HAPPY mood
 	public String analyseMood() 
 	{
-		if (message.contains("sad")) 
+		try
 		{
-			return "SAD";
-		} 
-		else 
+			if (message.contains("sad")) 
+			{
+				return "SAD";
+			} 
+			else 
+			{
+				return "HAPPY";
+			}
+		}
+		catch(NullPointerException e)
 		{
 			return "HAPPY";
 		}
