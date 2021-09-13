@@ -11,7 +11,8 @@ import org.junit.rules.ExpectedException;
  */
 public class MoodAnalyzerTestCases 
 {
-	  @Test
+	  //Test Case 1- returns sad when the message has sad.
+		@Test
 	    public void WhenMoodIsSadDisplaysSAD() 
 	    {
 		  MoodAnalyzer  moodAnalyzer = new MoodAnalyzer("I'm feeling sad.");
@@ -19,6 +20,7 @@ public class MoodAnalyzerTestCases
 		  Assert.assertEquals(mood, "SAD");
 	    }
 	    
+		//Test Case 2 - returns happy when the message has happy.
 	    @Test
 	    public void WhenMoodIsHappyDisplaysHAPPY() 
 	    {
@@ -27,6 +29,7 @@ public class MoodAnalyzerTestCases
 	    	Assert.assertEquals(mood, "HAPPY");
 		}
 	    
+	   //Test Case 3 - returns happy when the message has no occurance of the word 'sad'.
 	    @Test
 	    public void WhenMoodIsAnythingElseDisplaysHAPPY() 
 	    {
