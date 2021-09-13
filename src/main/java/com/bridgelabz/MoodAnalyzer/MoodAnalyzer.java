@@ -1,6 +1,6 @@
 package com.bridgelabz.MoodAnalyzer;
 /*
- * class MoodAnalyzer is the class which tells the mood as HAPPY or SAD based on the message passed.
+ * The class MoodAnalyzer is the class which tells the mood as HAPPY or SAD based on the message passed.
  * @param message is the mood message passed in Junit Test Case
  * @author Sanjana Rao
  * @since 12-09-2021
@@ -9,18 +9,28 @@ public class MoodAnalyzer
 {
 	String message;
 	
-	//Constructor to initialize the @param message
-	public MoodAnalyzer(String message) 
+	public MoodAnalyzer(String string) 
 	{
 		this.message = message;
 	}
+
+	//Constructor to initialize the @param message
+	public String MoodAnalyzer(String message) throws MoodAnalysisException
+	{
+		this.message = message;
+		return analyseMood();
+	}
 	
 	// This method returns SAD or HAPPY mood
-	public String analyseMood() 
+	public String analyseMood() throws MoodAnalysisException
 	{
 		try
 		{
-			if (message.contains("sad")) 
+			if(message.length() == 0)
+			{
+				throw new MoodAnalysisException("Please Enter a Valid message.",MoodAnalysisException.ExceptionType.EMPTY_MESSAGE);
+			}
+			else if (message.contains("sad")) 
 			{
 				return "SAD";
 			} 
@@ -31,7 +41,7 @@ public class MoodAnalyzer
 		}
 		catch(NullPointerException e)
 		{
-			return "HAPPY";
+			throw new MoodAnalysisException("Please Enter a Valid message.",MoodAnalysisException.ExceptionType.NULL_MESSAGE);
 		}
 	}
 }
